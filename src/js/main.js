@@ -24,14 +24,15 @@ window.addEventListener("gamepaddisconnected", (event) => {
 function checkControllerType(gamepad) {
     let controllerType = document.querySelector(".controller-outline");
     if (gamepad.id.includes("DualSense")) {
-        controllerType.setAttribute("src", "/controller_input_website/src/img/dualsense-svgrepo-com.svg")
+        controllerType.setAttribute("src", "/controller_input_website/src/img/dualsense-svgrepo-com.svg");
         updateButtionsSection(gamepad);
     } else {
         controllerType.style.display = "none";
     }
 
     if (gamepad.id.includes("xinput")) {
-        controllerType.setAttribute("src", "/controller_input_website/src/img/xbox-control-for-one-svgrepo-com.svg")
+        controllerType.setAttribute("src", "/controller_input_website/src/img/xbox-control-for-one-svgrepo-com.svg");
+        updateButtionsSection(gamepad);
     } else {
         controllerType.style.display = "none";
     }
