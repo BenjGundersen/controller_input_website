@@ -17,18 +17,19 @@ window.addEventListener("gamepaddisconnected", (event) => {
 
 });
 
-// Check for what type of controller is connected and display an appropriate svg file
+// Check for what type of controller is connected and display an appropriate svg file, removes the svg file from the site as the gamepad is disconnected.
 function checkControllerType(gamepad) {
+    let controllerType = document.querySelector(".controller-outline");
     if (gamepad.id.includes("DualSense")) {
-        document.querySelector(".controller-outline").setAttribute("src", "/src/img/dualsense-svgrepo-com.svg")
+        controllerType.setAttribute("src", "/src/img/dualsense-svgrepo-com.svg")
     } else {
-        document.querySelector(".controller-outline").style.display = "none";
+        controllerType.style.display = "none";
     }
 
     if (gamepad.id.includes("xinput")) {
-        document.querySelector(".controller-outline").setAttribute("src", "/src/img/xbox-control-for-one-svgrepo-com.svg")
+        controllerType.setAttribute("src", "/src/img/xbox-control-for-one-svgrepo-com.svg")
     } else {
-        document.querySelector(".controller-outline").style.display = "none";
+        controllerType.style.display = "none";
     }
 }
 
